@@ -1,70 +1,73 @@
-﻿# Student Attendance Prediction
+# Student Attendance Prediction
 
-A machine learning project that predicts whether a student is likely to have **high** or **low** attendance based on student-related inputs.
+This is my machine learning project on student attendance analysis and prediction.
 
-## Project Objective
+## Project Goal
 
-The goal of this project is to build a classification pipeline that helps identify attendance risk early. This can support schools and instructors in:
+The objective is to predict student attendance performance and identify whether a student falls into a high-attendance or low-attendance category based on academic and behavioral features.
 
-- spotting students who may need intervention,
-- improving retention and classroom engagement,
-- making data-informed decisions for academic support.
+## Project Files
 
-## Algorithms Used
+- `attendance.csv` - dataset with 1000 student records
+- `finalprojectsahu.ipynb` - complete notebook with data analysis, model training, evaluation, and plots
 
-The notebook includes and/or experiments with the following algorithms:
+## Features Used
 
-- **Linear Support Vector Classifier (LinearSVC)** (primary trained classifier)
-- **K-Nearest Neighbors (KNN)** (imported for model comparison/experimentation)
+- `Math_Score`
+- `Science_Score`
+- `English_Score`
+- `Study_Hours_Per_Week`
+- `Assignments_Completed`
+- `Participation_Score`
+- `Absences`
+- `Previous_Attendance_Percentage`
 
-## Workflow
+Targets:
+- Regression target: `Attendance_Percentage`
+- Classification target: `Attendance_Label` (`High` / `Low`)
 
-1. Load attendance dataset using `pandas`.
-2. Prepare features (`X`) and target (`y`).
-3. Convert categorical labels using `LabelEncoder`.
-4. Split data into training and testing sets (`train_test_split`).
-5. Train classifier (`LinearSVC`).
-6. Evaluate model using:
-   - Accuracy score
-   - Classification report
-   - Confusion matrix
+## Models Implemented
 
-## Tech Stack
+### Regression Models
 
-- **Language:** Python
-- **Environment:** Jupyter Notebook
-- **Libraries:**
-  - `pandas`
-  - `numpy`
-  - `scikit-learn`
+- Linear Regression
+- Ridge Regression
+- Lasso Regression
+- K-Nearest Neighbors Regressor
+- Support Vector Regressor (SVR)
+- Random Forest Regressor
+- Gradient Boosting Regressor
+
+### Classification Models
+
+- Logistic Regression
+- K-Nearest Neighbors Classifier
+- Support Vector Classifier (SVC)
+- Random Forest Classifier
+- Gradient Boosting Classifier
+
+## Visualizations Included
+
+- Attendance percentage distribution
+- Attendance label count plot
+- Correlation heatmap
+- Regression model comparison charts (R2 and RMSE)
+- Actual vs predicted attendance plot
+- Classification model comparison charts (Accuracy and F1-score)
+- Confusion matrix of the best classifier
 
 ## How to Run
 
-1. Clone the repository.
-2. Install dependencies:
+1. Install dependencies:
 
 ```bash
-pip install pandas numpy scikit-learn jupyter
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 ```
 
-3. Place dataset file in the project folder (or update the dataset path in the notebook).
-4. Start Jupyter:
+2. Start Jupyter Notebook:
 
 ```bash
 jupyter notebook
 ```
 
-5. Open `finalprojectsahu.ipynb` and run all cells.
-
-## Future Improvements
-
-- Compare more models (Logistic Regression, Random Forest, XGBoost).
-- Add cross-validation and hyperparameter tuning.
-- Improve feature engineering for stronger predictive signal.
-- Package notebook workflow into reusable Python scripts.
-- Build a simple dashboard/web app for attendance risk insights.
-- Add model persistence and inference pipeline for deployment.
-
-## Project Status
-
-This is an actively improvable portfolio project and a strong base for end-to-end ML workflow expansion.
+3. Open `finalprojectsahu.ipynb` and run all cells.
